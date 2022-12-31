@@ -1,0 +1,27 @@
+sort1 uses: bubble sort
+
+How do you know?: sort sorted in a good time and reversed in a bad time
+
+sort2 uses: merge sort
+
+How do you know?: sort random, sorted and reversed faster
+
+sort3 uses: selection sort
+
+How do you know?: sort reversed faster than sorter1(bubble sort) and slower than sort2(merge sort)
+
+----- Times -----
+Sorted50k:
+sort1: 0.740s
+sort2: 0.733s
+sort3: 3.595s
+
+Random50k:
+sort1: 8.559s
+sort2: 0.915s
+sort3: 3.984s
+
+Reversed50k:
+sort1: 6.329s
+sort2: 0.679s
+sort3: 3.194s

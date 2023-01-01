@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Background of all pages */
+body {
+    background-color: #00021a;
+    height: 100%;
+}
+
+/* Generic */
+h1 {
+    color: #f0b215;
+    font-weight: 700;
+}
+
+h2 {
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+p {
+    color: #e5e5e5;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.un {
+    display: inline-block;
+}
+  
+.un::after {
+    content: '';
+    width: 0px;
+    height: 1px;
+    display: block;
+    background: #f0b215;
+    transition: ease 200ms;
+}
+  
+.un:hover::after {
+    width: 100%;
+}
+
+/* Navbar */
+.bg-nav {
+    background-color: #000536;
+}
+
+.nav-link {
+    color: #e5e5e5 !important;
+}
+
+.active {
+    color: #f0b215 !important;
+}
+
+/* HOME PAGE */
+/* Main */
+#m-home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Profile image */
+#pfp {
+    border-radius: 100vh;
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin: 5vh auto;
+}
+
+/* Type cursor */
+span.cursor {
+ display: inline-block;
+ background-color: #ccc;
+ margin-left: 0.1rem;
+ width: 3px;
+ animation: blink 1s infinite;
+}
+
+span.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0%  { background-color: #ccc; }
+  49% { background-color: #ccc; }
+  50% { background-color: transparent; }
+  99% { background-color: transparent; }
+  100%  { background-color: #ccc; }
+}
+
+/* ABOUT */
+
+/* VS Code UI  */
+.vs-bg {
+    height: 80vh;
+    width: 95vw;
+    background-color: #191622;
+    margin: 5vh auto;
+    border-radius: 1.5vh;
+}
+
+.vs-btn {
+    width: 15px;
+    height: 15px;
+}
+
+.red{
+    background-color: #ff5f56;
+}
+
+.yellow {
+    background-color: #fdbb2a;
+}
+
+.green{
+    background-color: #29cc41;
+}
+
+.vs-menu {
+    display: flex;
+    padding-top: 8px;
+    margin-left: 8px;
+    width: 61px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.var-highlight {
+	color: #ff6491;
+}
+.string-highlight {
+	color: #e7c547 !important;
+}
+
+/* VS Code Content */
+#typewriter {
+    font-size: 2em;
+    padding-top: 5vh;
+    margin: 0;
+    font-family: "Courier New";
+    color: #e5e5e5;
+}
+
+#typewriter:after {
+	content: "|";
+	animation: blink 500ms linear infinite alternate;
+}
+
+
+@-webkit-keyframes blink {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@-moz-keyframes blink {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+@keyframes blink {
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+/* PROJECTS AN EDUCATION */
+/* Cards */
+.card {
+    width: 60vw;
+    background-color: #00021a;
+    border: 2px solid #f0b215b8 ;
+}
+
+.card-link, .link {
+    color: #f0b215;
+}
+
+.card-link:hover, .link:hover {
+    color: #f0b215;
+}
+
+.card-title {
+    color: #e5e5e5;
+}
+
+.card-body {
+    background-color: #00021a;
+}

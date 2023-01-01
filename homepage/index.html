@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Best pratices -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Link bootstrap and css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="styles.css" rel="stylesheet" />
+    <title>theGUI001</title>
+  </head>
+
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active un" aria-current="page" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link un" href="/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link un" href="/education.html">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link un" href="/projects.html">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main content -->
+    <main id="m-home">
+      <!-- My profile picture -->
+      <img src="/imgs/ralph.jpg" id="pfp" class="img-fluid" alt="my profile picture" />
+      <h1 id="hello" class="text-center">Hello, my name is <span class="typed-text"></span><span class="cursor">&nbsp;</span></h1>
+      <p class="text-center sub">
+        Here you can find some information about me, my interests, education and maybe, in the future, my personal projects.<br />
+        This site was built for Harvard's CS50X problem set 8.
+      </p>
+    </main>
+
+    <script>
+      // Typing effect
+      const typedTextSpan = document.querySelector(".typed-text");
+      const cursorSpan = document.querySelector(".cursor");
+
+      const textArray = ["theGUI001", "Luiz Guilherme"];
+      const typingDelay = 150; // Type velocity
+      const erasingDelay = 100; // Erase velocity
+      const newTextDelay = 3000; // Delay between current and next text
+      let textArrayIndex = 0;
+      let charIndex = 0;
+
+      function type() {
+        if (charIndex < textArray[textArrayIndex].length) {
+          if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+          typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          setTimeout(erase, newTextDelay);
+        }
+      }
+
+      function erase() {
+        if (charIndex > 0) {
+          if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+          typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, erasingDelay);
+        } else {
+          cursorSpan.classList.remove("typing");
+          textArrayIndex++;
+          if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+          setTimeout(type, typingDelay + 1100);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initiate the effect on DOM Load
+        if (textArray.length) setTimeout(type, newTextDelay + 250);
+      });
+    </script>
+  </body>
+</html>
